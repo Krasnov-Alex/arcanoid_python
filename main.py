@@ -12,14 +12,13 @@ GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
 
 class Player(pygame.sprite.Sprite):
-  def __init__(self, kof, color, x, y):
+  def __init__(self, color, x, y):
       pygame.sprite.Sprite.__init__(self)
       self.image = pygame.Surface((x, y))
       self.image.fill(color)
       self.rect = self.image.get_rect()
       self.rect.center = ((WIDTH / 2), (HEIGHT - 100))
       self.speed = 8
-      self.kof = kof
 
   def update(self):
     if event.type == pygame.KEYDOWN:
@@ -78,7 +77,7 @@ screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("My Game")
 clock = pygame.time.Clock()
 all_sprites = pygame.sprite.Group()
-player = Player(1.0, BLACK, 150, 26)
+player = Player(BLACK, 150, 26)
 qube = Qube()
 
 all_sprites.add(player, qube)
