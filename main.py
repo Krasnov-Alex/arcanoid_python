@@ -18,7 +18,7 @@ class Player(pygame.sprite.Sprite):
       self.image.fill(color)
       self.rect = self.image.get_rect()
       self.rect.center = ((WIDTH / 2), (HEIGHT - 100))
-      self.speed = 8
+      self.speed = 10
 
   def update(self):
     if event.type == pygame.KEYDOWN:
@@ -51,7 +51,7 @@ class Qube(pygame.sprite.Sprite):
     self.rect.center = ((WIDTH / 2), (HEIGHT / 2))
     self.countx = False
     self.county = False
-    self.speed = 5
+    self.speed = 4
 
   def update(self):
     if self.countx:
